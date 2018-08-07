@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>公车管家系统安全解决方案 | 探索</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/font.css"><link rel="stylesheet" type="text/css" href="/css/noise.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><article class="wrapper"><div class="post-main"><div class="nav"><nav class="container"><a class="sidebar-nav-item active" href="/">Home</a><a class="sidebar-nav-item" href="/archives">Archives</a></nav><div class="container post-meta"><div class="post-tags"><a class="post-tag-link" href="/tags/解决方案/">解决方案</a></div><div class="post-time">2018-08-08</div></div></div><div class="container post-header"><h1>公车管家系统安全解决方案</h1></div><div class="container post-content"><p>&emsp;&emsp;公车管家系统是基于运营商的车联网“云-管-端”架构设计的车辆管理系统， 基于运营商 TSP 平台为政府和企事业单位提供车辆监控等车联网服务，实现清晰、高效与安全用车。公车管理平台实时掌握车辆动态，通过对数据进行采集、分析、提取、分享和决策，对车辆和驾驶人提供综合服务，解决公车私用滥用、管理考核、费用管理、车辆调度、行车安全等问题。通过实现车辆管理集中化、跟踪监控全程化、在线派车电子化、统计分析多维度的目标，帮助用车单位提升管理水平、实现精细化管理。<a id="more"></a></p>
+<p>&emsp;&emsp;公车管家系统由多形态车载智能终端（OBD模块、智能后视镜、车机）、运营商通信网络（TD-LTE无线网）和TSP平台（公车管家业务管理系统）等多个部分组成。车载智能终端收集车辆信息（GPS信息、速度信息、车辆状态信息、故障检测、油耗分析、行驶情况、故障预警以及驾驶行为信息等），通过无线网络传送至TSP平台，平台分析处理后实时掌握车辆状态，同时可以对车载智能终端进行远程管控。由于车辆信息和管控指令均通过公共网络传输，因此对于系统网络数据传输的安全性需要进行重点考虑。</p>
+<div align="center"><br><img src="/2018/08/08/公车管家系统安全解决方案/image_1.png" title="公车管家系统网络结构图"><br></div>
+
+<h3 id="1-典型安全需求"><a href="#1-典型安全需求" class="headerlink" title="1. 典型安全需求"></a>1. 典型安全需求</h3><p>&emsp;&emsp;基于公车管家系统的系统结构和业务特点，其存在的主要安全需求如下：</p>
+<ul>
+<li>攻击者可以通过网络进行嗅探与监听，获取通过明文传输的用户数据或业务数据等敏感信息，进而通过贩卖敏感信息等方式损害系统正常运行或侵害用户权益。因此保证网络数据传输的机密性是系统最主要的安全需求。</li>
+<li>攻击者可以利用系统在网络中传输的数据缺乏完整性保护的漏洞，对截取的网络数据进行篡改后继续发送，导致系统处理错误数据，形成错误分析结果，影响系统业务的正常服务。还可能篡改对平台对终端发送的管控命令，影响终端设备正常运行。因此系统需要能对对网络数据传输的完整性和伪造信息的鉴别进行有效保障。</li>
+<li>攻击者可以利用系统身份鉴别机制不完善的漏洞，伪造或冒用他人身份接入系统，窃取系统信息、篡改系统数据，破坏系统资源，影响系统的正常运行。同时合法用户也可以借此通过否认已执行的行为或行为发生的时间，进行违规或非授权操作并避免责任追究。因此完善的身份鉴别机制是系统安全运行的必要保障。</li>
+</ul>
+<h3 id="2-安全解决方案"><a href="#2-安全解决方案" class="headerlink" title="2. 安全解决方案"></a>2. 安全解决方案</h3><p>&emsp;&emsp;公车管家密码安全系统由 TSP 平台、移动通信网络、密钥管理系统、车载智能安全终端、业务加密网关和远程管理终端 6 部分组成，系统网络结构如下图所示。</p>
+<div align="center"><br><img src="/2018/08/08/公车管家系统安全解决方案/image_2.png" title="公车管家密码安全系统网络结构图"><br></div>
+
+<p>&emsp;&emsp;TSP 平台和移动通信网络为运营商公车管家系统现有设施，其中 TSP 平台上部署若干应用服务器，为公车管家系统提供包括车辆位置信息、行驶轨迹监测等应用服务，移动通信网络为 TD-LTE 移动通信网，负责承载系统各类应用数据和管理数据的传输。<br>&emsp;&emsp;密钥管理系统负责系统内所有密码设备密码资源的全生命周期管理，同时对其实施在线安全管控。车载智能安全终端通过无线通信模块接入无线网络与业务加密网关建立安全隧道，保护系统业务数据安全传输。远程管理终端为用户普通PC，通过安装客户端软件和专用可插拔安全硬件与业务加密网关建立 SSL VPN 隧道，满足用户安全的查询、管理系统信息的使用需求。</p>
+<div align="center"><br><img src="/2018/08/08/公车管家系统安全解决方案/image_3.png" title="公车管家密码安全系统组成图"><br></div>
+
+<p>&emsp;&emsp;系统通过基于独立硬件实现的符合国家商密标准的安全隧道实现对系统业务数据在线传输的安全保护，保证其机密性、完整性和有效性，解决了信息窃取、信息篡改和非法远程控制等问题。通过基于证书、非对称算法和私有协议的身份认证机制实现了系统对终端设备的有效接入控制，避免了身份冒用、身份伪造等安全问题。<br>&emsp;&emsp;通过以上安全措施的实施，可以保证车辆信息能够安全上传 TSP 平台，用户可以在自有 PC 安全的通过 TSP 平台查询系统信息，同时保证非法终端无法接入系统，间接对 TSP 平台的安全防护能力有一定提升。</p>
+<h3 id="3-方案特点"><a href="#3-方案特点" class="headerlink" title="3. 方案特点"></a>3. 方案特点</h3><ul>
+<li>独立硬件加密，安全稳定<br>系统内密码设备的基础密码服务全部由独立专用硬件实现，包括物理噪声源生成真随机数、密码芯片进行算法计算、专用存储单元存储密码资源等。</li>
+<li>国家商密认证，自主可靠<br>系统使用的密钥格式、密码算法和密码协议符合国家商密标准，安全设备取得国家密码管理局认证的商用密码产品型号。</li>
+<li>在线设备管控，实施快捷<br>密管系统负责系统密码设备密码资源的产生、存储、注入、销毁等全生命周期管理，还支持对终端设备进行实时在线安全管控。</li>
+<li>协议策略配置，灵活透明<br>安全方案密码协议基于网络层实现，对用户业务系统透明，满足用户多样化使用需求。</li>
+</ul>
+<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h3><p>&emsp;&emsp;该项目的实施解决了公车管家系统网络数据传输的安全性需求，整套安全体系对业务系统透明，不影响业务系统的正常运行。该项目的技术方案在设计阶段以通用化、标准化为原则，普遍适用于工业互联网、物联网等领域的业务系统， 能够有效提升系统网络数据传输安全性。 </p>
+</div></div><div class="post-main post-comment"></div></article><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+  $(".fancybox").fancybox();
+});
+</script></body></html>
