@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>环保局典型安全解决方案 | 探索</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/font.css"><link rel="stylesheet" type="text/css" href="/css/noise.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><article class="wrapper"><div class="post-main"><div class="nav"><nav class="container"><a class="sidebar-nav-item active" href="/">Home</a><a class="sidebar-nav-item" href="/archives">Archives</a></nav><div class="container post-meta"><div class="post-tags"><a class="post-tag-link" href="/tags/解决方案/">解决方案</a></div><div class="post-time">2018-08-09</div></div></div><div class="container post-header"><h1>环保局典型安全解决方案</h1></div><div class="container post-content"><p>&emsp;&emsp;随着我国经济的发展，对能源的消耗不断增加，导致环境污染问题愈加突出。为配合国家关于节能减排、能源的监控与管理要求，某北部省的一个省会城市开展了节能减排监控管理平台的建设工作，该平台是把所有电力、钢铁、烟草等制造企业端的能源数据通过基于无线传感器物联网的监测数据采集上来，实现制造企业的能耗、减排的指标进行监控和管理。</p>
+<a id="more"></a>
+<p>&emsp;&emsp;为满足企业端与市级平台安全对接，保证企业网与市节能减排监控管理平台网络安全隔离的基础上，上传监控数据。涉及 250 多家的该市的制造企业端将通过在边界安全区部署工业安全隔离网闸来完成这一目标。</p>
+<h3 id="1-典型安全需求"><a href="#1-典型安全需求" class="headerlink" title="1. 典型安全需求"></a>1. 典型安全需求</h3><p>&emsp;&emsp;由于本项目接入的制造企业诸多，一方面不要因与各企业连接而传入病毒、恶意代码等，另一方面需要准确的接收来自各企业的数据。具体需求包括：<br>（1）支持电力、钢铁、烟草等制造企业端各类工控组件产生的工业监测数据（如 Modbus 等协议）通过安全隔离网闸上传至市节能减排监控管理平台中；<br>（2）工业安全隔离网闸须能够满足应用层单向隔离的情况下，实现工业监测数据的上传；<br>（3）工业专用的无线传感器设备能够直接通过安全隔离网闸进行单向数据传输；<br>（4）支持应用层数据单向传输，能够自定义 TCP 应答报文限制。（粒度 1个字节）<br>（5）支持 TCP、UDP 自定义访问通道，支持源地址、目的地址、目的端口的访问控制，支持生效时段控制策略、提供访问任务的单独启停控制。UDP 协议支持组播。<br>（6）支持内、外网主机系统分别采用冗余双系统启动模式:当 A 系统运行失败后，能从 B 系统启动，且 A、B 系统可互为备份。<br>（7）支持 IPV6、IPV4 双栈接入，内外网主机之间采用私有通讯协议。</p>
+<h3 id="2-安全解决方案"><a href="#2-安全解决方案" class="headerlink" title="2. 安全解决方案"></a>2. 安全解决方案</h3><p>&emsp;&emsp;该项目中传感器采用了 LoRa 采集终端和网关，传感器系统通过 UART 口与终端连接，传感器系统将电机计量数据透明传输给终端，终端将自动上传电机数据到网关。传输数据时采用了 MODBUS 协议。针对上述需求，通过大量的测试对比，最终选择了工控安全隔离与信息交换系统，部署在各企业接收器端，详细网络拓扑图如下所示：</p>
+<div align="center"><br><img src="/2018/08/09/环保局典型安全解决方案/image_1.jpg" title="工控安全隔离与信息交换系统部署拓扑图"><br></div>
+
+<p>&emsp;&emsp;最终满足了需求里的全部内容，实现了各制造企业端各类工控组件产生的工业监测数据（如 Modbus 等协议）通过安全隔离网闸上传至市节能减排监控管理平台中；实现了如下效果：<br>（1） 应用层数据单向传输，能够自定义 TCP 应答报文限制。（粒度 1 个字节）。</p>
+<div align="center"><br><img src="/2018/08/09/环保局典型安全解决方案/image_2.jpg" title="网闸配置界面 1"><br></div>
+
+<p>（2） TCP、UDP 访问通道，支持源地址、目的地址、目的端口的访问控制，支持生效时段控制策略、提供访问任务的单独启停控制。</p>
+<div align="center"><br><img src="/2018/08/09/环保局典型安全解决方案/image_3.jpg" title="网闸配置界面 2"><br></div>
+
+<p>（3） 同时为防止系统故障，设置了内、外网主机系统分别采用冗余双系统启动模式:当 A 系统运行失败后，能从 B 系统启动，且 A、B 系统可互为备份。</p>
+<div align="center"><br><img src="/2018/08/09/环保局典型安全解决方案/image_4.jpg" title="网闸配置界面 3"><br></div>
+
+<p>（4） 为保障自身隔离设备的安全，还提供了 IPV6、IPV4 双栈接入，内外网主机之间采用私有通讯协议。</p>
+<div align="center"><br><img src="/2018/08/09/环保局典型安全解决方案/image_5.jpg" title="网闸配置界面 4"><br></div>
+
+
+<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3. 小结"></a>3. 小结</h3><p>&emsp;&emsp;从该项目中看出，环保的实时监测的业务需求仍是环保单位的重中之重，所以在安全建设方面是仍以最小化需求，目前隔离是保障安全的第一步。而隔离时是选择工业防火墙还是工业网闸，是根据企业数据传输的频率、方向及反馈的实时性几个方面要求来决策。该项目也可供诸多其它行业 SCADA 监测系统的安全防护作为参考。</p>
+</div></div><div class="post-main post-comment"></div></article><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+  $(".fancybox").fancybox();
+});
+</script></body></html>
